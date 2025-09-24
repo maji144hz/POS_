@@ -1,0 +1,6 @@
+# Requirements needed when generating releases. See BUILD.rst for details.
+invoke >= 0.20
+rellu >= 0.6
+docutils >= 0.14
+robotframework >= 7.3.2
+robotframework-seleniumlibrary >= 6.7.1
