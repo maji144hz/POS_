@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-10-09T03:45:45.634652" rpa="false" schemaversion="5">
+<suite id="s1" name="Order Tests" source="E:\มหาลัย\POS_\Testing\order_tests">
+<suite id="s1-s1" name="Orders" source="E:\มหาลัย\POS_\Testing\order_tests\orders.robot">
+<test id="s1-s1-t1" name="TC001 - ขายสินค้า (ชำระด้วยเงินสด)" line="23">
+<kw name="Test Setup Sequence" owner="common_keywords" type="SETUP">
+<kw name="Open Browser To Login Page" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-09T03:45:45.876590" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020B7F1CCAD0&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver').webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.876403" elapsed="0.000218"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.876728" elapsed="0.000103"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm-driver</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.876907" elapsed="0.000077"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.877052" elapsed="0.000074"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.877188" elapsed="0.000068"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:45.877507" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-09T03:45:45.877336" elapsed="1.313074"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1400</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.190563" elapsed="0.030334"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.221038" elapsed="0.000705"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:45:45.875900" elapsed="1.345922"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:45:47.222229" level="INFO">${suite} = Order Tests.Orders</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.222117" elapsed="0.000134"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:45:47.222409" level="INFO">${test} = TC001 - ขายสินค้า (ชำระด้วยเงินสด)</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.222321" elapsed="0.000106"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-09T03:45:47.222598" level="INFO">${suite_sanit} = Order_Tests.Orders</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.222488" elapsed="0.000127"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-09T03:45:47.222788" level="INFO">${test_sanit} = TC001_-_ขายสินค้า_(ชำระด้วยเงินสด)</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.222683" elapsed="0.000122"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:45:47.223005" level="INFO">${dir} = screenshots\Order_Tests.Orders\TC001_-_ขายสินค้า_(ชำระด้วยเงินสด)</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.222870" elapsed="0.000153"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-09T03:45:47.223575" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Order_Tests.Orders\TC001_-_ขายสินค้า_(ชำระด้วยเงินสด)"&gt;E:\มหาลัย\POS_\screenshots\Order_Tests.Orders\TC001_-_ขายสินค้า_(ชำระด้วยเงินสด)&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.223366" elapsed="0.000253"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.223276" elapsed="0.000383"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-09T03:45:47.223117" elapsed="0.000583"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:45:47.224423" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Order_Tests.Orders\TC001_-_ขายสินค้า_(ชำระด้วยเงินสด)</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.223768" elapsed="0.000691"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:45:47.224788" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.224727" elapsed="0.000091"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-09T03:45:47.224557" elapsed="0.000301"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:45:47.221946" elapsed="0.002945"/>
+</kw>
+<kw name="Login With Credentials" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='username']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.225169" elapsed="0.013634"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:47.239145" level="INFO">Typing text '1' into text field 'css=input[name='username']'.</msg>
+<arg>css=input[name='username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.238949" elapsed="0.059545"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:47.298874" level="INFO">Typing text '123' into text field 'css=input[name='password']'.</msg>
+<arg>css=input[name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.298672" elapsed="0.042365"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:47.341332" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.341181" elapsed="0.049377"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:52.582364" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-09T03:45:52.582522" level="FAIL">Element 'css=.ant-spin,.loading,.v-overlay--active,.swal2-container' still visible after 5 seconds.</msg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="FAIL" start="2025-10-09T03:45:47.391145" elapsed="5.193019">Element 'css=.ant-spin,.loading,.v-overlay--active,.swal2-container' still visible after 5 seconds.</status>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:45:47.391032" elapsed="5.193226"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-09T03:45:52.884892" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-09T03:45:52.584365" elapsed="0.300714"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:45:47.390789" elapsed="5.494417"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-10-09T03:45:47.224975" elapsed="5.660324"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:45:45.875662" elapsed="7.009734"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:45:52.886716" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:45:52.886070" elapsed="0.000754"/>
+</kw>
+<arg>เริ่มต้น Cash Flow</arg>
+<status status="PASS" start="2025-10-09T03:45:52.885773" elapsed="0.001194"/>
+</kw>
+<kw name="Ensure On Order Sell Page" owner="order_sell_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:56.073188" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-09T03:45:56.073307" level="FAIL">Text 'ขายสินค้า' did not appear in 3 seconds.</msg>
+<arg>ขายสินค้า</arg>
+<arg>3s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-09T03:45:52.888204" elapsed="3.186003">Text 'ขายสินค้า' did not appear in 3 seconds.</status>
+</kw>
+<msg time="2025-10-09T03:45:56.074337" level="INFO">${ok1} = False</msg>
+<var>${ok1}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>ขายสินค้า</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-09T03:45:52.888026" elapsed="3.186334"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:59.268868" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-09T03:45:59.268990" level="FAIL">Element 'xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]' did not appear in 3 seconds.</msg>
+<arg>xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-09T03:45:56.074710" elapsed="3.195146">Element 'xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]' did not appear in 3 seconds.</status>
+</kw>
+<msg time="2025-10-09T03:45:59.270000" level="INFO">${ok2} = False</msg>
+<var>${ok2}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-09T03:45:56.074527" elapsed="3.195497"/>
+</kw>
+<if>
+<branch type="IF" condition="not (${ok1} or ${ok2})">
+<kw name="Go To Order Sell Page" owner="order_sell_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:45:59.270662" level="INFO">Opening url 'http://localhost:5173/order-sell'</msg>
+<arg>${BASE_URL}/order-sell</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-09T03:45:59.270564" elapsed="0.169511"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:02.240273" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:02.240794" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>${BTN_CHECKOUT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-09T03:45:59.440578" elapsed="2.803036">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-10-09T03:45:59.270365" elapsed="2.973557">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-10-09T03:45:59.270128" elapsed="2.973897">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</branch>
+<status status="FAIL" start="2025-10-09T03:45:59.270097" elapsed="2.974006">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</if>
+<status status="FAIL" start="2025-10-09T03:45:52.887659" elapsed="9.356558">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<kw name="Ensure Cart Open" owner="order_sell_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.244568" elapsed="0.000045"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.244856" elapsed="0.000042"/>
+</kw>
+<kw name="Add Product To Cart By Name" owner="order_sell_keywords">
+<arg>${PRODUCT_NAME}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.245373" elapsed="0.000032"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.245588" elapsed="0.000056"/>
+</kw>
+<kw name="Click Pay Now Smart" owner="order_sell_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.245951" elapsed="0.000038"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.246139" elapsed="0.000030"/>
+</kw>
+<kw name="Wait And Click" owner="common_keywords">
+<arg>${ORDER_BTN_PAYMENT_CASH}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.246364" elapsed="0.000034"/>
+</kw>
+<kw name="Click Numeric Key" owner="order_sell_keywords">
+<arg>9</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.246571" elapsed="0.000032"/>
+</kw>
+<kw name="Click Numeric Key" owner="order_sell_keywords">
+<arg>0</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.246835" elapsed="0.000031"/>
+</kw>
+<kw name="Click Numeric Key" owner="order_sell_keywords">
+<arg>0</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.247091" elapsed="0.000032"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-09T03:46:02.247270" elapsed="0.000025"/>
+</kw>
+<kw name="Confirm Payment And Expect Success" owner="order_sell_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:02.247456" elapsed="0.000035"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<arg>ชำระเงินสดสำเร็จ</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:02.247656" elapsed="0.000046"/>
+</kw>
+<kw name="Test Teardown Sequence" owner="common_keywords" type="TEARDOWN">
+<kw name="End Test Logging" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-09T03:46:02.249354" level="INFO">${random} = 5736</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-09T03:46:02.249022" elapsed="0.000372"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-09T03:46:02.249462" elapsed="0.000056"/>
+</return>
+<msg time="2025-10-09T03:46:02.249644" level="INFO">${rand} = 5736</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-09T03:46:02.248768" elapsed="0.000899"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:02.253813" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:02.254299" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" start="2025-10-09T03:46:02.249971" elapsed="0.021936">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:46:02.249791" elapsed="0.022223"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:46:02.272574" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:46:02.272489" elapsed="0.000122"/>
+</kw>
+<arg>Completed test: ${TEST NAME}</arg>
+<status status="PASS" start="2025-10-09T03:46:02.272217" elapsed="0.000441"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:02.248504" elapsed="0.024195"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-09T03:46:02.272770" elapsed="2.038357"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:02.248166" elapsed="2.063130"/>
+</kw>
+<tag>orders</tag>
+<tag>regression</tag>
+<tag>ui</tag>
+<status status="FAIL" start="2025-10-09T03:45:45.874881" elapsed="18.436705">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff67074c145]
+	(No symbol) [0x0x7ff67077177a]
+	(No symbol) [0x0x7ff6707e8b06]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</test>
+<test id="s1-s1-t2" name="TC003 - ขายสินค้า (ชำระด้วย QR Code)" line="45">
+<kw name="Test Setup Sequence" owner="common_keywords" type="SETUP">
+<kw name="Open Browser To Login Page" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-09T03:46:04.316913" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020B7F1711D0&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver').webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.316080" elapsed="0.000979"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.317383" elapsed="0.000191"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm-driver</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.317749" elapsed="0.000200"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.318118" elapsed="0.000189"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.318465" elapsed="0.000203"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:04.319291" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-09T03:46:04.318910" elapsed="1.344874"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1400</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.664017" elapsed="0.052939"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.717279" elapsed="0.001194"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:04.315352" elapsed="1.403221"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:46:05.719382" level="INFO">${suite} = Order Tests.Orders</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.719184" elapsed="0.000232"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:46:05.719719" level="INFO">${test} = TC003 - ขายสินค้า (ชำระด้วย QR Code)</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.719544" elapsed="0.000215"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-09T03:46:05.720114" level="INFO">${suite_sanit} = Order_Tests.Orders</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.719891" elapsed="0.000253"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-09T03:46:05.720516" level="INFO">${test_sanit} = TC003_-_ขายสินค้า_(ชำระด้วย_QR_Code)</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.720284" elapsed="0.000383"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:46:05.721102" level="INFO">${dir} = screenshots\Order_Tests.Orders\TC003_-_ขายสินค้า_(ชำระด้วย_QR_Code)</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.720861" elapsed="0.000271"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-09T03:46:05.721785" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Order_Tests.Orders\TC003_-_ขายสินค้า_(ชำระด้วย_QR_Code)"&gt;E:\มหาลัย\POS_\screenshots\Order_Tests.Orders\TC003_-_ขายสินค้า_(ชำระด้วย_QR_Code)&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.721551" elapsed="0.000284"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.721455" elapsed="0.000423"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-09T03:46:05.721262" elapsed="0.000655"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-09T03:46:05.722989" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Order_Tests.Orders\TC003_-_ขายสินค้า_(ชำระด้วย_QR_Code)</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.721990" elapsed="0.001079"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:46:05.724362" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.724146" elapsed="0.000254"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-09T03:46:05.723440" elapsed="0.001010"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:05.718784" elapsed="0.005700"/>
+</kw>
+<kw name="Login With Credentials" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='username']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.724788" elapsed="0.013036"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:05.738289" level="INFO">Typing text '1' into text field 'css=input[name='username']'.</msg>
+<arg>css=input[name='username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.738025" elapsed="0.057887"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:05.796523" level="INFO">Typing text '123' into text field 'css=input[name='password']'.</msg>
+<arg>css=input[name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.796188" elapsed="0.061553"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:05.858278" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.858038" elapsed="0.057497"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.916398" elapsed="4.449484"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:46:05.916187" elapsed="4.449811"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-09T03:46:10.666445" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.366150" elapsed="0.300487"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:05.915790" elapsed="4.751026"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-10-09T03:46:05.724579" elapsed="4.942343"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:04.314626" elapsed="6.352390"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:46:10.668406" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.668250" elapsed="0.000362"/>
+</kw>
+<arg>เริ่มต้น QR Flow</arg>
+<status status="PASS" start="2025-10-09T03:46:10.667712" elapsed="0.001052"/>
+</kw>
+<kw name="Ensure On Order Sell Page" owner="order_sell_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:10.676249" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.676993" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>ขายสินค้า</arg>
+<arg>3s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-09T03:46:10.669645" elapsed="0.010162">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<msg time="2025-10-09T03:46:10.680110" level="INFO">${ok1} = False</msg>
+<var>${ok1}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>ขายสินค้า</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.669459" elapsed="0.010687"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:10.686120" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.686652" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-09T03:46:10.680674" elapsed="0.007977">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<msg time="2025-10-09T03:46:10.688802" level="INFO">${ok2} = False</msg>
+<var>${ok2}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//input[@type='search' or contains(@placeholder,'ค้นหา') or contains(@placeholder,'Search')]</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.680342" elapsed="0.008484"/>
+</kw>
+<if>
+<branch type="IF" condition="not (${ok1} or ${ok2})">
+<kw name="Go To Order Sell Page" owner="order_sell_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:10.689465" level="INFO">Opening url 'http://localhost:5173/order-sell'</msg>
+<msg time="2025-10-09T03:46:10.692419" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.692780" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>${BASE_URL}/order-sell</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-10-09T03:46:10.689345" elapsed="0.031619">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BTN_CHECKOUT}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-09T03:46:10.721191" elapsed="0.000032"/>
+</kw>
+<status status="FAIL" start="2025-10-09T03:46:10.689147" elapsed="0.032173">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-10-09T03:46:10.688923" elapsed="0.032448">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</branch>
+<status status="FAIL" start="2025-10-09T03:46:10.688899" elapsed="0.032518">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</if>
+<status status="FAIL" start="2025-10-09T03:46:10.669126" elapsed="0.052351">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<kw name="Ensure Cart Open" owner="order_sell_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:10.721763" elapsed="0.000036"/>
+</kw>
+<kw name="Try Filter Product By Name" owner="order_sell_keywords">
+<arg>${PRODUCT_NAME}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.722020" elapsed="0.000030"/>
+</kw>
+<kw name="Add Product To Cart By Name" owner="order_sell_keywords">
+<arg>${PRODUCT_NAME}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.722395" elapsed="0.000023"/>
+</kw>
+<kw name="Try Filter Product By Name" owner="order_sell_keywords">
+<arg>${PRODUCT_NAME_2}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.722574" elapsed="0.000020"/>
+</kw>
+<kw name="Add Product To Cart By Name" owner="order_sell_keywords">
+<arg>${PRODUCT_NAME_2}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.722998" elapsed="0.000028"/>
+</kw>
+<kw name="Proceed To Checkout" owner="order_sell_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:10.723168" elapsed="0.000023"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<status status="NOT RUN" start="2025-10-09T03:46:10.723292" elapsed="0.000020"/>
+</kw>
+<kw name="Wait And Click" owner="common_keywords">
+<arg>${ORDER_BTN_PAYMENT_QR}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.723465" elapsed="0.000019"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-10-09T03:46:10.723665" elapsed="0.000021"/>
+</kw>
+<kw name="Log Step And Screenshot" owner="common_keywords">
+<arg>เปิดหน้าจ่ายเงิน - QR</arg>
+<arg>order_qr</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.723792" elapsed="0.000019"/>
+</kw>
+<kw name="Click If Exists" owner="common_keywords">
+<arg>${SWAL_CONFIRM}</arg>
+<status status="NOT RUN" start="2025-10-09T03:46:10.723906" elapsed="0.000017"/>
+</kw>
+<kw name="Test Teardown Sequence" owner="common_keywords" type="TEARDOWN">
+<kw name="End Test Logging" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-09T03:46:10.724923" level="INFO">${random} = 5948</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.724723" elapsed="0.000221"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-09T03:46:10.724990" elapsed="0.000036"/>
+</return>
+<msg time="2025-10-09T03:46:10.725109" level="INFO">${rand} = 5948</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-09T03:46:10.724520" elapsed="0.000605"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-09T03:46:10.728418" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.728898" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" start="2025-10-09T03:46:10.725291" elapsed="0.004732">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.725201" elapsed="0.004902"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-09T03:46:10.730651" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.730562" elapsed="0.000136"/>
+</kw>
+<arg>Completed test: ${TEST NAME}</arg>
+<status status="PASS" start="2025-10-09T03:46:10.730229" elapsed="0.000518"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:10.724354" elapsed="0.006430"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-09T03:46:10.730860" elapsed="2.069645"/>
+</kw>
+<status status="PASS" start="2025-10-09T03:46:10.724160" elapsed="2.076446"/>
+</kw>
+<tag>orders</tag>
+<tag>regression</tag>
+<tag>ui</tag>
+<status status="FAIL" start="2025-10-09T03:46:04.313178" elapsed="8.487549">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</status>
+</test>
+<doc>ชุดทดสอบการขาย: เงินสด/โอน/QR ด้วย ORDER_* selectors</doc>
+<meta name="component">orders</meta>
+<meta name="owner">qa</meta>
+<status status="FAIL" start="2025-10-09T03:45:45.655796" elapsed="27.145639"/>
+</suite>
+<status status="FAIL" start="2025-10-09T03:45:45.635800" elapsed="27.166462"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">orders</stat>
+<stat pass="0" fail="2" skip="0">regression</stat>
+<stat pass="0" fail="2" skip="0">ui</stat>
+</tag>
+<suite>
+<stat name="Order Tests" id="s1" pass="0" fail="2" skip="0">Order Tests</stat>
+<stat name="Orders" id="s1-s1" pass="0" fail="2" skip="0">Order Tests.Orders</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-09T03:46:02.240273" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:02.253813" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff670760425]
+	(No symbol) [0x0x7ff6707a864f]
+	(No symbol) [0x0x7ff6707e10f2]
+	(No symbol) [0x0x7ff6707db89f]
+	(No symbol) [0x0x7ff6707da94a]
+	(No symbol) [0x0x7ff67072a765]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	(No symbol) [0x0x7ff67072970e]
+	GetHandleVerifier [0x0x7ff670dd6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.676249" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.686120" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.692419" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+<msg time="2025-10-09T03:46:10.728418" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6709de995+80021]
+	GetHandleVerifier [0x0x7ff6709de9f0+80112]
+	(No symbol) [0x0x7ff67076060f]
+	(No symbol) [0x0x7ff6707382f1]
+	(No symbol) [0x0x7ff6707e88be]
+	(No symbol) [0x0x7ff670808fa2]
+	(No symbol) [0x0x7ff6707e1003]
+	(No symbol) [0x0x7ff6707a95d1]
+	(No symbol) [0x0x7ff6707aa3f3]
+	GetHandleVerifier [0x0x7ff670c9dd4d+2960461]
+	GetHandleVerifier [0x0x7ff670c9800a+2936586]
+	GetHandleVerifier [0x0x7ff670cb8a47+3070279]
+	GetHandleVerifier [0x0x7ff6709f847e+185214]
+	GetHandleVerifier [0x0x7ff6709ffecf+216527]
+	GetHandleVerifier [0x0x7ff6709e7bd4+117460]
+	GetHandleVerifier [0x0x7ff6709e7d8f+117903]
+	GetHandleVerifier [0x0x7ff6709cdc68+11112]
+	BaseThreadInitThunk [0x0x7ffa69b5e8d7+23]
+	RtlUserThreadStart [0x0x7ffa6ab88d9c+44]
+</msg>
+</errors>
+</robot>

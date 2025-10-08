@@ -34,11 +34,12 @@ TC001 - ขายสินค้า (ชำระด้วยเงินสด)
     Wait Table Idle
     Wait And Click    ${ORDER_BTN_PAYMENT_CASH}
 
-    Click Numeric Key    1
+    Click Numeric Key    9
     Click Numeric Key    0
     Click Numeric Key    0
-
+    Sleep    5s
     Confirm Payment And Expect Success
+    
     Safe Log    ชำระเงินสดสำเร็จ
 
 TC003 - ขายสินค้า (ชำระด้วย QR Code)
@@ -53,6 +54,7 @@ TC003 - ขายสินค้า (ชำระด้วย QR Code)
 
     Proceed To Checkout
     Wait Table Idle
-    Wait And Click    ${ORDER_BTN_PAYMENT_QR}
+    Wait And Click    ${ORDER_BTN_PAYMENT_QR} 
+    Sleep    5s
     Log Step And Screenshot    เปิดหน้าจ่ายเงิน - QR    order_qr
     Click If Exists    ${SWAL_CONFIRM}

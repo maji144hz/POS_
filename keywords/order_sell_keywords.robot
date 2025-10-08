@@ -106,7 +106,7 @@ Select Product Card By Name
     ${clicked}=    Run Keyword And Return Status    Click Element    ${target}
     IF    not ${clicked}
         ${el}=    Get WebElement    ${target}
-        Execute Javascript    arguments[0].click();    ${el}
+        Execute Javascript    arguments[0].click();    ARGUMENTS    ${el}
     END
     ${icon_visible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${BTN_CART_ICON}    1s
     IF    ${icon_visible}
@@ -118,6 +118,9 @@ Click Numeric Key
     Click Element    xpath=//button[normalize-space(.)='${digit}']
 
 Open Cart Floating Button
+    Wait Until Element Is Visible    ${BTN_OPEN_CART_ID}    ${TIMEOUT}
+    Scroll Element Into View    ${BTN_OPEN_CART_ID}
+    Sleep    0.5s
     ${clicked}=    Run Keyword And Return Status    Click Element    ${BTN_OPEN_CART_ID}
     IF    not ${clicked}
         ${clicked}=    Run Keyword And Return Status    Click Element    ${OPEN_CART_DATA_TIP}
@@ -164,6 +167,7 @@ Proceed To Checkout
 Confirm Payment And Expect Success
     Wait And Click    ${BTN_CONFIRM_PAY}
     Wait Until Page Contains    ${SUCCESS_TEXT}    ${TIMEOUT}
+    Sleep    5s
     Capture Page Screenshot    ${SCREEN_DIR}${/}order_cash_success.png
     Click If Exists    ${SWAL_CONFIRM}
 
@@ -237,14 +241,14 @@ Add Product To Cart By Name
     Safe Log    [DEBUG] ผลการคลิก: ${clicked}
     IF    not ${clicked}
         ${el}=    Get WebElement    ${target}
-        Execute Javascript    arguments[0].click();    ${el}
+        Execute Javascript    arguments[0].click();    ARGUMENTS    ${el}
     END
 
     ${el}=    Get WebElement    ${target}
-    ${js_clicked}=    Execute Javascript    var root=arguments[0];var p=root.querySelector('path[d^="M528.12"]');if(p){var b=p.closest('button');if(b){b.click();return true;}}return false;    ${el}
+    ${js_clicked}=    Execute Javascript    var root=arguments[0];var p=root.querySelector('path[d^="M528.12"]');if(p){var b=p.closest('button');if(b){b.click();return true;}}return false;    ARGUMENTS    ${el}
     Safe Log    [DEBUG] ผลการคลิก cart icon: ${js_clicked}
     IF    not ${js_clicked}
-        Execute Javascript    var root=arguments[0];var btns=root.querySelectorAll('button');if(btns&&btns.length){btns[btns.length-1].click();}    ${el}
+        Execute Javascript    var root=arguments[0];var btns=root.querySelectorAll('button');if(btns&&btns.length){btns[btns.length-1].click();}    ARGUMENTS    ${el}
     END
 
     ${icon_visible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${BTN_CART_ICON}    1s

@@ -1,0 +1,2003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-10-08T12:48:39.873797" rpa="false" schemaversion="5">
+<suite id="s1" name="Categories" source="E:\มหาลัย\POS_\Testing\category_tests\categories.robot">
+<test id="s1-t1" name="TC001 - เพิ่มหมวดหมู่" line="22">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser To Login Page" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:48:40.128457" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024FABB99010&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver').webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.128284" elapsed="0.000202"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.128580" elapsed="0.000087"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm-driver</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.128752" elapsed="0.000081"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.128896" elapsed="0.000067"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.129019" elapsed="0.000062"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:40.129321" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.129153" elapsed="1.437923"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1400</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.567288" elapsed="0.018574"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.586028" elapsed="0.000817"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:40.128111" elapsed="1.458816"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:41.587866" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.587708" elapsed="0.000185"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:41.588228" level="INFO">${test} = TC001 - เพิ่มหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.588071" elapsed="0.000238"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:48:41.588664" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.588512" elapsed="0.000174"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:48:41.588930" level="INFO">${test_sanit} = TC001_-_เพิ่มหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.588777" elapsed="0.000176"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:41.589342" level="INFO">${dir} = screenshots\Categories\TC001_-_เพิ่มหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.589101" elapsed="0.000266"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:48:41.590027" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC001_-_เพิ่มหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC001_-_เพิ่มหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.589792" elapsed="0.000294"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.589695" elapsed="0.000441"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:48:41.589499" elapsed="0.000692"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:41.590879" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC001_-_เพิ่มหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.590278" elapsed="0.000644"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:48:41.591770" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.591532" elapsed="0.000281"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:48:41.591060" elapsed="0.000807"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:41.587185" elapsed="0.004720"/>
+</kw>
+<kw name="Login And Go To Category Page" owner="category_keywords">
+<kw name="Login With Credentials" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='username']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.593060" elapsed="0.014962"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:41.608379" level="INFO">Typing text '1' into text field 'css=input[name='username']'.</msg>
+<arg>css=input[name='username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.608177" elapsed="0.058301"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:41.666855" level="INFO">Typing text '123' into text field 'css=input[name='password']'.</msg>
+<arg>css=input[name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.666640" elapsed="0.081825"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:41.749185" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.748841" elapsed="0.058064"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.807716" elapsed="0.007846"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.807564" elapsed="0.008076"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:48:42.116232" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:48:41.815745" elapsed="0.300579"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:41.807197" elapsed="0.309204"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-10-08T12:48:41.592813" elapsed="0.523627"/>
+</kw>
+<kw name="Navigate To Management Menu" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.116887" elapsed="0.449530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:42.566723" level="INFO">Clicking element 'xpath=//span[contains(text(),'จัดการ')]'.</msg>
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.566567" elapsed="0.038000"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.605076" elapsed="0.025922"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.604952" elapsed="0.026127"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:48:42.931551" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.631184" elapsed="0.300456"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:42.604743" elapsed="0.326972"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:42.116610" elapsed="0.815144"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:42.932091" level="INFO">Clicking element 'xpath=//a[contains(text(),'ประเภทสินค้า')]'.</msg>
+<arg>xpath=//a[contains(text(),'ประเภทสินค้า')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:42.931857" elapsed="0.074458"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_BTN_ADD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.006543" elapsed="0.016012"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:41.592346" elapsed="1.430296"/>
+</kw>
+<arg>Open Browser To Login Page</arg>
+<arg>AND</arg>
+<arg>Initialize Test Logging</arg>
+<arg>AND</arg>
+<arg>Login And Go To Category Page</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:48:40.127898" elapsed="2.894786"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.023202" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.023050" elapsed="0.000178"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.023406" level="INFO">${test} = TC001 - เพิ่มหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.023313" elapsed="0.000112"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:48:43.023605" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.023494" elapsed="0.000128"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:48:43.023793" level="INFO">${test_sanit} = TC001_-_เพิ่มหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.023691" elapsed="0.000119"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.024005" level="INFO">${dir} = screenshots\Categories\TC001_-_เพิ่มหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.023877" elapsed="0.000148"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:48:43.024623" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC001_-_เพิ่มหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC001_-_เพิ่มหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.024402" elapsed="0.000271"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.024317" elapsed="0.000398"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:48:43.024136" elapsed="0.000618"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.024947" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC001_-_เพิ่มหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.024829" elapsed="0.000145"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.025312" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.025255" elapsed="0.000085"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:48:43.025073" elapsed="0.000306"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:43.022847" elapsed="0.002563"/>
+</kw>
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.025953" level="INFO">${random} = 2104</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.025764" elapsed="0.000207"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:48:43.026013" elapsed="0.000062"/>
+</return>
+<msg time="2025-10-08T12:48:43.026171" level="INFO">${RANDOM} = 2104</msg>
+<var>${RANDOM}</var>
+<status status="PASS" start="2025-10-08T12:48:43.025588" elapsed="0.000600"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.026332" level="INFO">${name} = ทดสอบหมวดหมู่ 1234</msg>
+<var>${name}</var>
+<arg>ทดสอบหมวดหมู่ 1234</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.026257" elapsed="0.000091"/>
+</kw>
+<kw name="Log Step And Screenshot" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.027004" level="INFO">${random} = 3808</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.026788" elapsed="0.000247"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:48:43.027094" elapsed="0.000048"/>
+</return>
+<msg time="2025-10-08T12:48:43.027231" level="INFO">${rand} = 3808</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-08T12:48:43.026614" elapsed="0.000633"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:48:43.027910" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.027840" elapsed="0.000102"/>
+</kw>
+<arg>${message}</arg>
+<status status="PASS" start="2025-10-08T12:48:43.027331" elapsed="0.000656"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:43.156655" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Categories/TC001_-_%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/step_3808.png"&gt;&lt;img src="screenshots/Categories/TC001_-_%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/step_3808.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}${filename}_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.028178" elapsed="0.128555"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}${filename}_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.028071" elapsed="0.128719"/>
+</kw>
+<arg>เปิดหน้าเพิ่มหมวดหมู่</arg>
+<status status="PASS" start="2025-10-08T12:48:43.026438" elapsed="0.130401"/>
+</kw>
+<kw name="Create Category" owner="category_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:43.158092" level="INFO">Clicking element 'id=create-category-button'.</msg>
+<arg>${CATEGORY_BTN_ADD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.157700" elapsed="0.057770"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.215625" elapsed="0.011236"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.227092" elapsed="0.041675"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:43.269107" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234' into text field 'xpath=//input[@placeholder='ชื่อประเภทสินค้า']'.</msg>
+<arg>${CATEGORY_INPUT_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.268911" elapsed="0.075880"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:43.345144" level="INFO">Clicking element 'xpath=//button[contains(normalize-space(.),'บันทึก')]'.</msg>
+<arg>${CATEGORY_BTN_SAVE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.344943" elapsed="0.039794"/>
+</kw>
+<kw name="Click If Exists" owner="common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.385256" elapsed="0.653001"/>
+</kw>
+<msg time="2025-10-08T12:48:44.038409" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-08T12:48:43.385147" elapsed="0.653286"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:44.038853" level="INFO">Clicking element 'css=button.swal2-confirm'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.038722" elapsed="0.045236"/>
+</kw>
+<arg>${ok}</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.038556" elapsed="0.045480"/>
+</kw>
+<arg>css=button.swal2-confirm</arg>
+<status status="PASS" start="2025-10-08T12:48:43.384911" elapsed="0.699179"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.084202" elapsed="0.005588"/>
+</kw>
+<arg>${name}</arg>
+<status status="PASS" start="2025-10-08T12:48:43.157052" elapsed="0.932842"/>
+</kw>
+<kw name="Search Category By Name" owner="category_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.090293" elapsed="0.010770"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.101205" elapsed="0.032988"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:44.134554" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234' into text field 'id=category-search-input'.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.134361" elapsed="0.061236"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:44.196122" level="INFO">Sending key(s) ('ENTER',) to id=category-search-input element.</msg>
+<msg time="2025-10-08T12:48:44.479510" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-10-08T12:48:44.479574" level="INFO">Releasing special key ENTER.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.195816" elapsed="0.287288"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${name}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.483400" elapsed="0.008373"/>
+</kw>
+<arg>${name}</arg>
+<status status="PASS" start="2025-10-08T12:48:44.090048" elapsed="0.401811"/>
+</kw>
+<kw name="Screenshot Latest Category Row" owner="category_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:48:44.492858" level="INFO">${ROW} = xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"ทดสอบหมวดหมู่ 1234")]])[1]</msg>
+<var>${ROW}</var>
+<arg>xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"${name}")]])[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:48:44.492526" elapsed="0.000396"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:59.582686" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-08T12:48:59.582821" level="FAIL">Element 'xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"ทดสอบหมวดหมู่ 1234")]])[1]' not visible after 15 seconds.</msg>
+<arg>${ROW}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-08T12:48:44.493069" elapsed="15.091424">Element 'xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"ทดสอบหมวดหมู่ 1234")]])[1]' not visible after 15 seconds.</status>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ROW}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2025-10-08T12:48:59.584644" elapsed="0.000025"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<arg>${SCREEN_DIR}</arg>
+<status status="NOT RUN" start="2025-10-08T12:48:59.584775" elapsed="0.000022"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<arg>${ROW}</arg>
+<arg>${SCREEN_DIR}${/}latest_category.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="NOT RUN" start="2025-10-08T12:48:59.584863" elapsed="0.000015"/>
+</kw>
+<arg>${name}</arg>
+<status status="FAIL" start="2025-10-08T12:48:44.492134" elapsed="15.092828">Element 'xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"ทดสอบหมวดหมู่ 1234")]])[1]' not visible after 15 seconds.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="End Test Logging" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:48:59.585818" level="INFO">${random} = 7736</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.585635" elapsed="0.000206"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:48:59.585885" elapsed="0.000028"/>
+</return>
+<msg time="2025-10-08T12:48:59.585990" level="INFO">${rand} = 7736</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-08T12:48:59.585450" elapsed="0.000556"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:48:59.647629" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Categories/TC001_-_%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/final_7736.png"&gt;&lt;img src="screenshots/Categories/TC001_-_%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/final_7736.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.586175" elapsed="0.061535"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.586084" elapsed="0.061685"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:48:59.648208" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.648137" elapsed="0.000101"/>
+</kw>
+<arg>Completed test: ${TEST NAME}</arg>
+<status status="PASS" start="2025-10-08T12:48:59.647900" elapsed="0.000380"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:48:59.585264" elapsed="0.063048"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.648388" elapsed="2.323293"/>
+</kw>
+<arg>End Test Logging</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:48:59.585129" elapsed="2.386632"/>
+</kw>
+<tag>categories</tag>
+<tag>regression</tag>
+<tag>ui</tag>
+<status status="FAIL" start="2025-10-08T12:48:40.126815" elapsed="21.844993">Element 'xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"ทดสอบหมวดหมู่ 1234")]])[1]' not visible after 15 seconds.</status>
+</test>
+<test id="s1-t2" name="TC002 - แก้ไขหมวดหมู่" line="31">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser To Login Page" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:49:01.973000" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024FABBA4E10&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver').webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.972845" elapsed="0.000176"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.973092" elapsed="0.000079"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm-driver</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.973233" elapsed="0.000071"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.973362" elapsed="0.000064"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.973574" elapsed="0.000084"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:01.973879" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.973737" elapsed="1.496584"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1400</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.470487" elapsed="0.031378"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.502126" elapsed="0.001313"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:01.972705" elapsed="1.530809"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:03.503945" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.503835" elapsed="0.000131"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:03.504125" level="INFO">${test} = TC002 - แก้ไขหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.504041" elapsed="0.000102"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:03.504313" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.504209" elapsed="0.000120"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:03.504501" level="INFO">${test_sanit} = TC002_-_แก้ไขหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.504400" elapsed="0.000117"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:03.504715" level="INFO">${dir} = screenshots\Categories\TC002_-_แก้ไขหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.504583" elapsed="0.000149"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:49:03.505294" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC002_-_แก้ไขหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC002_-_แก้ไขหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.505076" elapsed="0.000266"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.504992" elapsed="0.000390"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:03.504820" elapsed="0.000601"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:03.505964" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC002_-_แก้ไขหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.505491" elapsed="0.000507"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:03.506515" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.506398" elapsed="0.000165"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:03.506154" elapsed="0.000555"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:03.503659" elapsed="0.003168"/>
+</kw>
+<kw name="Login And Go To Category Page" owner="category_keywords">
+<kw name="Login With Credentials" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='username']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.507867" elapsed="0.013121"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:03.521762" level="INFO">Typing text '1' into text field 'css=input[name='username']'.</msg>
+<arg>css=input[name='username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.521333" elapsed="0.074496"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:03.596274" level="INFO">Typing text '123' into text field 'css=input[name='password']'.</msg>
+<arg>css=input[name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.595978" elapsed="0.052928"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:03.649338" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.649159" elapsed="0.068805"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.718539" elapsed="0.009685"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.718419" elapsed="0.009890"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.029140" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:03.728468" elapsed="0.300801"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:03.718196" elapsed="0.311195"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-10-08T12:49:03.507485" elapsed="0.521973"/>
+</kw>
+<kw name="Navigate To Management Menu" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.029955" elapsed="0.425176"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:04.455627" level="INFO">Clicking element 'xpath=//span[contains(text(),'จัดการ')]'.</msg>
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.455427" elapsed="0.042006"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.500243" elapsed="0.005233"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.497819" elapsed="0.007736"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.806186" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.505667" elapsed="0.300617"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:04.497605" elapsed="0.308758"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:04.029657" elapsed="0.776760"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:04.806917" level="INFO">Clicking element 'xpath=//a[contains(text(),'ประเภทสินค้า')]'.</msg>
+<arg>xpath=//a[contains(text(),'ประเภทสินค้า')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.806582" elapsed="0.077852"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_BTN_ADD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.884587" elapsed="0.013400"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:03.507087" elapsed="1.391017"/>
+</kw>
+<arg>Open Browser To Login Page</arg>
+<arg>AND</arg>
+<arg>Initialize Test Logging</arg>
+<arg>AND</arg>
+<arg>Login And Go To Category Page</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:49:01.972555" elapsed="2.925592"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.898745" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.898619" elapsed="0.000148"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.898938" level="INFO">${test} = TC002 - แก้ไขหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.898849" elapsed="0.000107"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:04.899130" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.899024" elapsed="0.000123"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:04.899316" level="INFO">${test_sanit} = TC002_-_แก้ไขหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.899215" elapsed="0.000118"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.899544" level="INFO">${dir} = screenshots\Categories\TC002_-_แก้ไขหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.899406" elapsed="0.000157"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:49:04.900184" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC002_-_แก้ไขหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC002_-_แก้ไขหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.899939" elapsed="0.000302"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.899847" elapsed="0.000441"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:04.899660" elapsed="0.000667"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.900523" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC002_-_แก้ไขหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.900405" elapsed="0.000145"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.900873" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.900810" elapsed="0.000093"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:04.900641" elapsed="0.000301"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:04.898376" elapsed="0.002598"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.901242" level="INFO">${old_name} = ทดสอบหมวดหมู่ 1234</msg>
+<var>${old_name}</var>
+<arg>ทดสอบหมวดหมู่ 1234</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.901118" elapsed="0.000147"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:04.901464" level="INFO">${new_name} = ทดสอบหมวดหมู่ 1234 แก้ไข</msg>
+<var>${new_name}</var>
+<arg>${old_name} แก้ไข</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.901363" elapsed="0.000118"/>
+</kw>
+<kw name="Search Category By Name" owner="category_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.901787" elapsed="0.011307"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.913243" elapsed="0.021277"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:04.934877" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234' into text field 'id=category-search-input'.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:04.934668" elapsed="0.074211"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:05.009353" level="INFO">Sending key(s) ('ENTER',) to id=category-search-input element.</msg>
+<msg time="2025-10-08T12:49:05.278356" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-10-08T12:49:05.278418" level="INFO">Releasing special key ENTER.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.009038" elapsed="0.272142"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${name}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.281529" elapsed="0.008437"/>
+</kw>
+<arg>${old_name}</arg>
+<status status="PASS" start="2025-10-08T12:49:04.901602" elapsed="0.388455"/>
+</kw>
+<kw name="Click Category Edit Button" owner="category_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//button[starts-with(@id,'edit-category-button-')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.290404" elapsed="0.006564"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[starts-with(@id,'edit-category-button-')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.297118" elapsed="0.274213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:05.572330" level="INFO">Clicking element 'xpath=//button[starts-with(@id,'edit-category-button-')]'.</msg>
+<arg>xpath=//button[starts-with(@id,'edit-category-button-')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.571748" elapsed="0.039012"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.612291" elapsed="0.004032"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.611944" elapsed="0.004456"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:05.917697" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.616506" elapsed="0.301323"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:05.610936" elapsed="0.307060"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:05.290199" elapsed="0.627858"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_INPUT_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.918209" elapsed="0.015608"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_INPUT_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.934040" elapsed="0.025134"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:05.959638" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234 แก้ไข' into text field 'id=edit-category-name-input'.</msg>
+<arg>${CATEGORY_EDIT_INPUT_NAME}</arg>
+<arg>${new_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:05.959412" elapsed="0.065957"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:06.025700" level="INFO">Clicking element 'xpath=//button[contains(normalize-space(.),'บันทึกข้อมูล')]'.</msg>
+<arg>${CATEGORY_BTN_SAVE_EDIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.025523" elapsed="0.036880"/>
+</kw>
+<kw name="Click If Exists" owner="common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.063050" elapsed="0.222898"/>
+</kw>
+<msg time="2025-10-08T12:49:06.286194" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.062938" elapsed="0.223280"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:06.287068" level="INFO">Clicking element 'css=button.swal2-confirm'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.286716" elapsed="0.042457"/>
+</kw>
+<arg>${ok}</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.286435" elapsed="0.042849"/>
+</kw>
+<arg>${SWAL_CONFIRM}</arg>
+<status status="PASS" start="2025-10-08T12:49:06.062665" elapsed="0.266708"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_INPUT_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.329536" elapsed="0.004500"/>
+</kw>
+<kw name="Log Step And Screenshot" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:49:06.334858" level="INFO">${random} = 5231</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.334659" elapsed="0.000222"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:49:06.334928" elapsed="0.000033"/>
+</return>
+<msg time="2025-10-08T12:49:06.335050" level="INFO">${rand} = 5231</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-08T12:49:06.334472" elapsed="0.000596"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:06.335390" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.335328" elapsed="0.000090"/>
+</kw>
+<arg>${message}</arg>
+<status status="PASS" start="2025-10-08T12:49:06.335160" elapsed="0.000297"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:06.440597" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Categories/TC002_-_%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/step_5231.png"&gt;&lt;img src="screenshots/Categories/TC002_-_%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/step_5231.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}${filename}_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.335615" elapsed="0.105097"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}${filename}_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.335528" elapsed="0.105246"/>
+</kw>
+<arg>แก้ไขหมวดหมู่เสร็จสิ้น</arg>
+<status status="PASS" start="2025-10-08T12:49:06.334218" elapsed="0.106606"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="End Test Logging" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:49:06.443158" level="INFO">${random} = 6550</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.442527" elapsed="0.000689"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:49:06.443271" elapsed="0.000034"/>
+</return>
+<msg time="2025-10-08T12:49:06.443397" level="INFO">${rand} = 6550</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-08T12:49:06.441755" elapsed="0.001661"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:06.519922" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Categories/TC002_-_%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/final_6550.png"&gt;&lt;img src="screenshots/Categories/TC002_-_%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82%E0%B8%AB%E0%B8%A1%E0%B8%A7%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88/final_6550.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.443836" elapsed="0.076166"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.443579" elapsed="0.076485"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:06.520521" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.520447" elapsed="0.000106"/>
+</kw>
+<arg>Completed test: ${TEST NAME}</arg>
+<status status="PASS" start="2025-10-08T12:49:06.520199" elapsed="0.000397"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:06.441308" elapsed="0.079322"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.520706" elapsed="2.600945"/>
+</kw>
+<arg>End Test Logging</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:49:06.441100" elapsed="2.680635"/>
+</kw>
+<tag>categories</tag>
+<tag>regression</tag>
+<tag>ui</tag>
+<status status="PASS" start="2025-10-08T12:49:01.972186" elapsed="7.149590"/>
+</test>
+<test id="s1-t3" name="TC003 - ลบหมวดหมู่" line="46">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser To Login Page" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:49:09.122805" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024FAB4B1E50&gt;</msg>
+<var>${options}</var>
+<arg>__import__('selenium.webdriver').webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.122661" elapsed="0.000164"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.122895" elapsed="0.000078"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gcm-driver</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.123033" elapsed="0.000068"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.123166" elapsed="0.000066"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.123289" elapsed="0.000063"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:09.123552" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.123424" elapsed="1.522236"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1400</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.646365" elapsed="0.033000"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.679514" elapsed="0.000851"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:09.122525" elapsed="1.557912"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:10.681065" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.680876" elapsed="0.000355"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:10.681502" level="INFO">${test} = TC003 - ลบหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.681370" elapsed="0.000154"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:10.681752" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.681608" elapsed="0.000165"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:10.682031" level="INFO">${test_sanit} = TC003_-_ลบหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.681873" elapsed="0.000183"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:10.682434" level="INFO">${dir} = screenshots\Categories\TC003_-_ลบหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.682163" elapsed="0.000416"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:49:10.683374" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC003_-_ลบหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC003_-_ลบหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.683087" elapsed="0.000366"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.682989" elapsed="0.000568"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:10.682753" elapsed="0.000883"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:10.684664" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC003_-_ลบหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.683722" elapsed="0.001008"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:10.685211" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.685129" elapsed="0.000124"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:10.684884" elapsed="0.000421"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:10.680598" elapsed="0.004748"/>
+</kw>
+<kw name="Login And Go To Category Page" owner="category_keywords">
+<kw name="Login With Credentials" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[name='username']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.685990" elapsed="0.014105"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:10.700423" level="INFO">Typing text '1' into text field 'css=input[name='username']'.</msg>
+<arg>css=input[name='username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.700239" elapsed="0.068472"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:10.769055" level="INFO">Typing text '123' into text field 'css=input[name='password']'.</msg>
+<arg>css=input[name='password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.768864" elapsed="0.068842"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:10.838070" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.837863" elapsed="0.070642"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.909067" elapsed="0.008637"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.908957" elapsed="0.008828"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:11.218196" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:10.917900" elapsed="0.300416"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:10.908712" elapsed="0.309708"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-10-08T12:49:10.685638" elapsed="0.532840"/>
+</kw>
+<kw name="Navigate To Management Menu" owner="common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.218967" elapsed="0.427429"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:11.646716" level="INFO">Clicking element 'xpath=//span[contains(text(),'จัดการ')]'.</msg>
+<arg>xpath=//span[contains(text(),'จัดการ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.646550" elapsed="0.043386"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.690590" elapsed="0.005248"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.690465" elapsed="0.005527"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:11.996960" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.696326" elapsed="0.300758"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:11.690159" elapsed="0.307014"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:11.218666" elapsed="0.778548"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:11.997480" level="INFO">Clicking element 'xpath=//a[contains(text(),'ประเภทสินค้า')]'.</msg>
+<arg>xpath=//a[contains(text(),'ประเภทสินค้า')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:11.997322" elapsed="0.106199"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_BTN_ADD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.103683" elapsed="0.014979"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:10.685459" elapsed="1.433293"/>
+</kw>
+<arg>Open Browser To Login Page</arg>
+<arg>AND</arg>
+<arg>Initialize Test Logging</arg>
+<arg>AND</arg>
+<arg>Login And Go To Category Page</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:49:09.122376" elapsed="2.996416"/>
+</kw>
+<kw name="Initialize Test Logging" owner="common_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.119264" level="INFO">${suite} = Categories</msg>
+<var>${suite}</var>
+<arg>${SUITE NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.119150" elapsed="0.000135"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.119458" level="INFO">${test} = TC003 - ลบหมวดหมู่</msg>
+<var>${test}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.119364" elapsed="0.000155"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:12.119733" level="INFO">${suite_sanit} = Categories</msg>
+<var>${suite_sanit}</var>
+<arg>${suite}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.119606" elapsed="0.000144"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-08T12:49:12.119924" level="INFO">${test_sanit} = TC003_-_ลบหมวดหมู่</msg>
+<var>${test_sanit}</var>
+<arg>${test}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.119821" elapsed="0.000120"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.120141" level="INFO">${dir} = screenshots\Categories\TC003_-_ลบหมวดหมู่</msg>
+<var>${dir}</var>
+<arg>${SCREEN_DIR}${/}${suite_sanit}${/}${test_sanit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.120009" elapsed="0.000149"/>
+</kw>
+<kw name="Create Directory If Not Exists" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-08T12:49:12.120822" level="INFO" html="true">Directory '&lt;a href="file://E:\มหาลัย\POS_\screenshots\Categories\TC003_-_ลบหมวดหมู่"&gt;E:\มหาลัย\POS_\screenshots\Categories\TC003_-_ลบหมวดหมู่&lt;/a&gt;' already exists.</msg>
+<arg>${directory}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.120487" elapsed="0.000431"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${directory}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.120406" elapsed="0.000581"/>
+</kw>
+<arg>${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:12.120249" elapsed="0.000787"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.121250" level="INFO">${TEST_ARTIFACT_DIR} = screenshots\Categories\TC003_-_ลบหมวดหมู่</msg>
+<arg>${TEST_ARTIFACT_DIR}</arg>
+<arg>${dir}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.121121" elapsed="0.000173"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.121731" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.121660" elapsed="0.000103"/>
+</kw>
+<arg>Initialized artifacts at: ${dir}</arg>
+<status status="PASS" start="2025-10-08T12:49:12.121440" elapsed="0.000370"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:12.118946" elapsed="0.002899"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T12:49:12.121994" level="INFO">${name} = ทดสอบหมวดหมู่ 1234 แก้ไข</msg>
+<var>${name}</var>
+<arg>ทดสอบหมวดหมู่ 1234 แก้ไข</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.121915" elapsed="0.000097"/>
+</kw>
+<kw name="Search Category By Name" owner="category_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.122278" elapsed="0.013064"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.135492" elapsed="0.027785"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:12.163996" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234 แก้ไข' into text field 'id=category-search-input'.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.163712" elapsed="0.104592"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:12.268753" level="INFO">Sending key(s) ('ENTER',) to id=category-search-input element.</msg>
+<msg time="2025-10-08T12:49:12.542921" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-10-08T12:49:12.543034" level="INFO">Releasing special key ENTER.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.268453" elapsed="0.279559"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${name}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.548249" elapsed="0.009158"/>
+</kw>
+<arg>${name}</arg>
+<status status="PASS" start="2025-10-08T12:49:12.122113" elapsed="0.435393"/>
+</kw>
+<kw name="Click Category Delete Button" owner="category_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//button[starts-with(@id,'delete-category-button-')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.557890" elapsed="0.006509"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[starts-with(@id,'delete-category-button-')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.564602" elapsed="0.272869"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:12.837907" level="INFO">Clicking element 'xpath=//button[starts-with(@id,'delete-category-button-')]'.</msg>
+<arg>xpath=//button[starts-with(@id,'delete-category-button-')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.837684" elapsed="0.065358"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:18.086874" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-08T12:49:18.086994" level="FAIL">Element 'css=.ant-spin,.loading,.v-overlay--active,.swal2-container' still visible after 5 seconds.</msg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="FAIL" start="2025-10-08T12:49:12.903583" elapsed="5.184215">Element 'css=.ant-spin,.loading,.v-overlay--active,.swal2-container' still visible after 5 seconds.</status>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:12.903478" elapsed="5.184405"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:18.388232" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.087984" elapsed="0.300370"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:12.903270" elapsed="5.485218"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:12.557659" elapsed="5.830870"/>
+</kw>
+<kw name="Confirm Delete Dialog" owner="category_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SWAL_CONFIRM}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.389079" elapsed="0.008909"/>
+</kw>
+<msg time="2025-10-08T12:49:18.398107" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SWAL_CONFIRM}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.388961" elapsed="0.009168"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:18.398525" level="INFO">Clicking element 'css=button.swal2-confirm'.</msg>
+<arg>${SWAL_CONFIRM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.398397" elapsed="0.042311"/>
+</kw>
+<arg>${ok}</arg>
+<arg>Click Element</arg>
+<arg>${SWAL_CONFIRM}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.398248" elapsed="0.042549"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.441074" elapsed="0.418009"/>
+</kw>
+<msg time="2025-10-08T12:49:18.859206" level="INFO">${ok2} = True</msg>
+<var>${ok2}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.440926" elapsed="0.418303"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:18.859714" level="INFO">Clicking element 'xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']'.</msg>
+<arg>xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.859594" elapsed="0.034054"/>
+</kw>
+<arg>${ok2}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.859405" elapsed="0.034355"/>
+</kw>
+<kw name="Wait Table Idle" owner="common_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.894439" elapsed="0.214531"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>${SPINNERS}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:18.894284" elapsed="0.214788"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T12:49:19.409504" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T12:49:19.109185" elapsed="0.300411"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:18.893980" elapsed="0.515724"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:18.388665" elapsed="1.021116"/>
+</kw>
+<kw name="Search Category By Name" owner="category_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-08T12:49:19.410235" elapsed="0.007823"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:19.418202" elapsed="0.019563"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:19.438179" level="INFO">Typing text 'ทดสอบหมวดหมู่ 1234 แก้ไข' into text field 'id=category-search-input'.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T12:49:19.437958" elapsed="0.074460"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:19.513043" level="INFO">Sending key(s) ('ENTER',) to id=category-search-input element.</msg>
+<msg time="2025-10-08T12:49:19.791293" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-10-08T12:49:19.791383" level="INFO">Releasing special key ENTER.</msg>
+<arg>${CATEGORY_INPUT_SEARCH}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-08T12:49:19.512617" elapsed="0.281431"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:30.838752" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+<msg time="2025-10-08T12:49:30.838945" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d5060f]
+	(No symbol) [0x0x7ff663d3c145]
+	(No symbol) [0x0x7ff663d6177a]
+	(No symbol) [0x0x7ff663dd8b06]
+	(No symbol) [0x0x7ff663df8fa2]
+	(No symbol) [0x0x7ff663dd1003]
+	(No symbol) [0x0x7ff663d995d1]
+	(No symbol) [0x0x7ff663d9a3f3]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	GetHandleVerifier [0x0x7ff663fd7bd4+117460]
+	GetHandleVerifier [0x0x7ff663fd7d8f+117903]
+	GetHandleVerifier [0x0x7ff663fbdc68+11112]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+<arg>${name}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-08T12:49:19.794194" elapsed="11.072371">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d5060f]
+	(No symbol) [0x0x7ff663d3c145]
+	(No symbol) [0x0x7ff663d6177a]
+	(No symbol) [0x0x7ff663dd8b06]
+	(No symbol) [0x0x7ff663df8fa2]
+	(No symbol) [0x0x7ff663dd1003]
+	(No symbol) [0x0x7ff663d995d1]
+	(No symbol) [0x0x7ff663d9a3f3]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	GetHandleVerifier [0x0x7ff663fd7bd4+117460]
+	GetHandleVerifier [0x0x7ff663fd7d8f+117903]
+	GetHandleVerifier [0x0x7ff663fbdc68+11112]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</status>
+</kw>
+<arg>${name}</arg>
+<status status="FAIL" start="2025-10-08T12:49:19.409936" elapsed="11.456822">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d5060f]
+	(No symbol) [0x0x7ff663d3c145]
+	(No symbol) [0x0x7ff663d6177a]
+	(No symbol) [0x0x7ff663dd8b06]
+	(No symbol) [0x0x7ff663df8fa2]
+	(No symbol) [0x0x7ff663dd1003]
+	(No symbol) [0x0x7ff663d995d1]
+	(No symbol) [0x0x7ff663d9a3f3]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	GetHandleVerifier [0x0x7ff663fd7bd4+117460]
+	GetHandleVerifier [0x0x7ff663fd7d8f+117903]
+	GetHandleVerifier [0x0x7ff663fbdc68+11112]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</status>
+</kw>
+<kw name="Verify Category Not Exists" owner="category_keywords">
+<arg>${name}</arg>
+<status status="NOT RUN" start="2025-10-08T12:49:30.866912" elapsed="0.000030"/>
+</kw>
+<kw name="Log Step And Screenshot" owner="common_keywords">
+<arg>ลบหมวดหมู่เสร็จสิ้น</arg>
+<status status="NOT RUN" start="2025-10-08T12:49:30.867026" elapsed="0.000022"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="End Test Logging" owner="common_keywords">
+<kw name="Generate Random Number" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-08T12:49:30.868004" level="INFO">${random} = 1708</msg>
+<var>${random}</var>
+<arg>random.randint(${min}, ${max})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-08T12:49:30.867783" elapsed="0.000252"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-10-08T12:49:30.868091" elapsed="0.000036"/>
+</return>
+<msg time="2025-10-08T12:49:30.868218" level="INFO">${rand} = 1708</msg>
+<var>${rand}</var>
+<arg>1000</arg>
+<arg>9999</arg>
+<status status="PASS" start="2025-10-08T12:49:30.867576" elapsed="0.000661"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-10-08T12:49:30.870961" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+<msg time="2025-10-08T12:49:30.871317" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" start="2025-10-08T12:49:30.868423" elapsed="0.016285">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</status>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_ARTIFACT_DIR}${/}final_${rand}.png</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-08T12:49:30.868323" elapsed="0.016478"/>
+</kw>
+<kw name="Safe Log" owner="common_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-08T12:49:30.885443" level="INFO">Safe Log</msg>
+<arg>Safe Log</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-08T12:49:30.885352" elapsed="0.000193"/>
+</kw>
+<arg>Completed test: ${TEST NAME}</arg>
+<status status="PASS" start="2025-10-08T12:49:30.885063" elapsed="0.000582"/>
+</kw>
+<status status="PASS" start="2025-10-08T12:49:30.867380" elapsed="0.018308"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-08T12:49:30.885793" elapsed="2.011200"/>
+</kw>
+<arg>End Test Logging</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-08T12:49:30.867229" elapsed="2.029848"/>
+</kw>
+<tag>categories</tag>
+<tag>regression</tag>
+<tag>ui</tag>
+<status status="FAIL" start="2025-10-08T12:49:09.122032" elapsed="23.775091">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=141.0.7390.54)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d5060f]
+	(No symbol) [0x0x7ff663d3c145]
+	(No symbol) [0x0x7ff663d6177a]
+	(No symbol) [0x0x7ff663dd8b06]
+	(No symbol) [0x0x7ff663df8fa2]
+	(No symbol) [0x0x7ff663dd1003]
+	(No symbol) [0x0x7ff663d995d1]
+	(No symbol) [0x0x7ff663d9a3f3]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	GetHandleVerifier [0x0x7ff663fd7bd4+117460]
+	GetHandleVerifier [0x0x7ff663fd7d8f+117903]
+	GetHandleVerifier [0x0x7ff663fbdc68+11112]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</status>
+</test>
+<doc>ชุดทดสอบหมวดหมู่: เพิ่ม/แก้ไข/ลบ ด้วย CATEGORY_* locators</doc>
+<meta name="component">categories</meta>
+<meta name="owner">qa</meta>
+<status status="FAIL" start="2025-10-08T12:48:39.875249" elapsed="53.022364"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="2" skip="0">categories</stat>
+<stat pass="1" fail="2" skip="0">regression</stat>
+<stat pass="1" fail="2" skip="0">ui</stat>
+</tag>
+<suite>
+<stat name="Categories" id="s1" pass="1" fail="2" skip="0">Categories</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-08T12:49:30.838752" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+<msg time="2025-10-08T12:49:30.870961" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff663fce995+80021]
+	GetHandleVerifier [0x0x7ff663fce9f0+80112]
+	(No symbol) [0x0x7ff663d50425]
+	(No symbol) [0x0x7ff663d9864f]
+	(No symbol) [0x0x7ff663dd10f2]
+	(No symbol) [0x0x7ff663dcb89f]
+	(No symbol) [0x0x7ff663dca94a]
+	(No symbol) [0x0x7ff663d1a765]
+	GetHandleVerifier [0x0x7ff66428dd4d+2960461]
+	GetHandleVerifier [0x0x7ff66428800a+2936586]
+	GetHandleVerifier [0x0x7ff6642a8a47+3070279]
+	GetHandleVerifier [0x0x7ff663fe847e+185214]
+	GetHandleVerifier [0x0x7ff663fefecf+216527]
+	(No symbol) [0x0x7ff663d1970e]
+	GetHandleVerifier [0x0x7ff6643c6b38+4241976]
+	BaseThreadInitThunk [0x0x7ffcc5cde8d7+23]
+	RtlUserThreadStart [0x0x7ffcc6068d9c+44]
+</msg>
+</errors>
+</robot>
