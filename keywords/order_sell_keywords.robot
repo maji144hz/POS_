@@ -4,8 +4,8 @@ Resource   ./common_keywords.robot
 
 *** Variables ***
 # --- Buttons / Elements ---
-${BTN_CHECKOUT}             css=button.px-6.py-3.text-white.bg-green-500.rounded-xl.font-medium.hover\\:bg-green-600.transition-colors
-${BTN_CHECKOUT_SPECIFIC}    css=button.px-6.py-3.text-white.bg-green-500.rounded-xl.font-medium.hover\\:bg-green-600.transition-colors
+${BTN_CHECKOUT}             css=button[data-tip='ชำระเงิน']
+${BTN_CHECKOUT_SPECIFIC}    css=button[data-tip='ชำระเงิน']
 
 ${BTN_PAYMENT_CASH}         xpath=//button[.//h3[contains(normalize-space(.), 'เงินสด')]]
 ${BTN_PAYMENT_QR}           xpath=//button[.//h3[contains(normalize-space(.), 'QR Code')]]
