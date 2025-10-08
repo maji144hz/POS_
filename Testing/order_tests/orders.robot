@@ -29,7 +29,7 @@ TC001 - ขายสินค้า (ชำระด้วยเงินสด)
     Add Product To Cart By Name     ${PRODUCT_NAME}
 
     Wait Table Idle
-    Click Pay Now Smart
+    Proceed To Checkout
 
     Wait Table Idle
     Wait And Click    ${ORDER_BTN_PAYMENT_CASH}
