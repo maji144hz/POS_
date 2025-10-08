@@ -57,17 +57,21 @@ Ensure On Create Product Page
     ${loc}=         Get Location
     ${on_create}=   Run Keyword And Return Status    Should Contain    ${loc}    /products/create-product
     IF    not ${on_create}
-        Go To    ${CREATE_URL}
+        Go To    ${PRODUCT_CREATE_URL}
         Wait Table Idle
     END
 
 Upload Product Image
     [Arguments]    ${filepath}
-    Wait Until Element Is Visible       ${UPLOAD_CLICK_AREA}    ${TIMEOUT}
-    Scroll Element Into View            ${UPLOAD_CLICK_AREA}
-    Click Element                       ${UPLOAD_CLICK_AREA}
+    ${dir}    ${fname}=    Split Path    ${filepath}
+    Create Directory If Not Exists    ${dir}
+    ${exists}=    Run Keyword And Return Status    File Should Exist    ${filepath}
+    Run Keyword Unless    ${exists}    Create File    ${filepath}
+    Wait Until Element Is Visible       ${PRODUCT_UPLOAD_CLICK_AREA}    ${TIMEOUT}
+    Scroll Element Into View            ${PRODUCT_UPLOAD_CLICK_AREA}
+    Click Element                       ${PRODUCT_UPLOAD_CLICK_AREA}
     Sleep    0.3s
-    ${file_input}=    Get First Present Locator    ${INPUT_FILE_OPT1}    ${INPUT_FILE_OPT2}
+    ${file_input}=    Get First Present Locator    ${PRODUCT_INPUT_FILE_OPT1}    ${PRODUCT_INPUT_FILE_OPT2}
     Run Keyword And Ignore Error    Execute Javascript    arguments[0].style.display='block';    ${file_input}
     Run Keyword And Ignore Error    Execute Javascript    arguments[0].removeAttribute('hidden');    ${file_input}
     Choose File    ${file_input}    ${filepath}
@@ -75,13 +79,13 @@ Upload Product Image
     Sleep    0.5s
 
 Click Save Product
-    ${clicked}=    Run Keyword And Return Status    Click Element    ${BTN_SAVE_OPT1}
+    ${clicked}=    Run Keyword And Return Status    Click Element    ${PRODUCT_BTN_SAVE_OPT1}
     Run Keyword If    ${clicked}    RETURN From Keyword
-    ${has2}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${BTN_SAVE_OPT2}    2s
-    Run Keyword If    ${has2}    Click Element    ${BTN_SAVE_OPT2}
+    ${has2}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${PRODUCT_BTN_SAVE_OPT2}    2s
+    Run Keyword If    ${has2}    Click Element    ${PRODUCT_BTN_SAVE_OPT2}
     Run Keyword If    ${has2}    RETURN From Keyword
-    ${has3}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${BTN_SAVE_OPT3}    2s
-    Run Keyword If    ${has3}    Click Element    ${BTN_SAVE_OPT3}
+    ${has3}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${PRODUCT_BTN_SAVE_OPT3}    2s
+    Run Keyword If    ${has3}    Click Element    ${PRODUCT_BTN_SAVE_OPT3}
     Run Keyword If    ${has3}    RETURN From Keyword
     Fail    ไม่พบปุ่มบันทึกสินค้า
 
@@ -114,7 +118,7 @@ Add Product To Cart By Name
     Run Keyword If    not ${has_add} and ${has_plus}    Wait And Click    ${plus_btn}
 
     # เคสบางระบบ "คลิกการ์ด = ใส่ตะกร้าแล้ว" ไม่มีปุ่มให้กดต่อ → ไม่ต้องทำอะไรเพิ่ม
-    Log    Product added to cart (or system auto-added when card was clicked)
+    Safe Log    Product added to cart (or system auto-added when card was clicked)
 
 # คีย์เวิร์ดกรองชื่อแบบทน input หลายแบบ: placeholder ไทย/อังกฤษ + กด Enter
 Try Filter Product By Name

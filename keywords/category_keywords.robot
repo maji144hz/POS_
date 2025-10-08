@@ -8,24 +8,24 @@ Login And Go To Category Page
     Login With Credentials    ${VALID_USER}    ${VALID_PASSWORD}
     Navigate To Management Menu
     Click Element    xpath=//a[contains(text(),'ประเภทสินค้า')]
-    Wait Until Element Is Visible    ${BTN_ADD_CATEGORY}
+    Wait Until Element Is Visible    ${CATEGORY_BTN_ADD}
 
 Create Category
     [Arguments]    ${name}
-    Click Element    ${BTN_ADD_CATEGORY}
-    Wait Until Element Is Visible    ${INPUT_CATEGORY}
-    Clear Element Text    ${INPUT_CATEGORY}
-    Input Text            ${INPUT_CATEGORY}    ${name}
-    Click Element         ${BTN_SAVE}
+    Click Element    ${CATEGORY_BTN_ADD}
+    Wait Until Element Is Visible    ${CATEGORY_INPUT_NAME}
+    Clear Element Text    ${CATEGORY_INPUT_NAME}
+    Input Text            ${CATEGORY_INPUT_NAME}    ${name}
+    Click Element         ${CATEGORY_BTN_SAVE}
     Click If Exists       css=button.swal2-confirm
-    Wait Until Element Is Not Visible    ${INPUT_CATEGORY}    ${TIMEOUT}
+    Wait Until Element Is Not Visible    ${CATEGORY_INPUT_NAME}    ${TIMEOUT}
 
 Search Category By Name
     [Arguments]    ${name}
-    Wait Until Element Is Visible    ${SEARCH_CATEGORY}    ${TIMEOUT}
-    Clear Element Text    ${SEARCH_CATEGORY}
-    Input Text            ${SEARCH_CATEGORY}    ${name}
-    Press Keys            ${SEARCH_CATEGORY}    ENTER
+    Wait Until Element Is Visible    ${CATEGORY_INPUT_SEARCH}    ${TIMEOUT}
+    Clear Element Text    ${CATEGORY_INPUT_SEARCH}
+    Input Text            ${CATEGORY_INPUT_SEARCH}    ${name}
+    Press Keys            ${CATEGORY_INPUT_SEARCH}    ENTER
     Wait Until Page Contains    ${name}    ${TIMEOUT}
 
 Screenshot Latest Category Row
@@ -37,14 +37,14 @@ Screenshot Latest Category Row
     Capture Element Screenshot    ${ROW}    ${SCREEN_DIR}${/}latest_category.png
 
 # ===== Edit =====
-Click Edit Category Button
+Click Category Edit Button
     Wait Until Page Contains Element    xpath=//button[starts-with(@id,'edit-category-button-')]    ${TIMEOUT}
     Scroll Element Into View            xpath=//button[starts-with(@id,'edit-category-button-')]
     Click Element                       xpath=//button[starts-with(@id,'edit-category-button-')]
     Wait Table Idle
 
 # ===== Delete =====
-Click Delete Button
+Click Category Delete Button
     Wait Until Page Contains Element    xpath=//button[starts-with(@id,'delete-category-button-')]    ${TIMEOUT}
     Scroll Element Into View            xpath=//button[starts-with(@id,'delete-category-button-')]
     Click Element                       xpath=//button[starts-with(@id,'delete-category-button-')]

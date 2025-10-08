@@ -38,7 +38,9 @@ Click Edit Category Button
     Wait Until Page Contains Element    ${BTN_EDIT_SINGLE}    ${TIMEOUT}
     Scroll Element Into View            ${BTN_EDIT_SINGLE}
     ${clicked}=    Run Keyword And Return Status    Click Element    ${BTN_EDIT_SINGLE}
-    Run Keyword If    not ${clicked}    ${el}=    Get WebElement    ${BTN_EDIT_SINGLE}
+    IF    not ${clicked}
+        ${el}=    Get WebElement    ${BTN_EDIT_SINGLE}
+    END
 
 Fill Edit Dialog And Save
     [Arguments]    ${new_name}

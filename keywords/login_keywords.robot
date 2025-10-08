@@ -4,16 +4,16 @@ Library    SeleniumLibrary
 *** Keywords ***
 # ===== Login Management =====
 Open Browser To Login Page
-    Open Browser    ${LOGIN_URL}    ${BROWSER}
+    Open Browser    ${LOGIN_PAGE_URL}    ${LOGIN_BROWSER}
     Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
+    Set Selenium Speed    ${LOGIN_DELAY}
     Login Page Should Be Open
 
 Login Page Should Be Open
     Title Should Be    POSSIBLE
 
 Go To Login Page
-    Go To    ${LOGIN_URL}
+    Go To    ${LOGIN_PAGE_URL}
     Login Page Should Be Open
 
 Input Username
@@ -31,10 +31,10 @@ Submit Credentials
     Click Button    css=button[type='submit']
 
 Welcome Page Should Be Open
-    Location Should Be    ${WELCOME_URL}
+    Location Should Be    ${LOGIN_WELCOME_URL}
     Title Should Be    POSSIBLE
 
 Login Should Have Failed
-    Location Should Be    ${ERROR_URL}
+    Location Should Be    ${LOGIN_ERROR_URL}
     Title Should Be    POSSIBLE
     Page Should Contain    ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง

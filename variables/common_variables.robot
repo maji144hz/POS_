@@ -6,6 +6,11 @@ ${VALID_USER}         1
 ${VALID_PASSWORD}     123
 ${TIMEOUT}            15s
 ${SCREEN_DIR}         screenshots
+${SHORT_TIMEOUT}      5s
+${LONG_TIMEOUT}       30s
+
+# --- Execution Flags ---
+${HEADLESS}           false
 
 # --- Common Locators ---
 ${SPINNERS}           css=.ant-spin,.loading,.v-overlay--active,.swal2-container
