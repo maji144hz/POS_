@@ -1,9 +1,17 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
+Resource   ./common_keywords.robot
+Resource   ../variables/suppliers_variables.robot
+
+# ========================================
+# ไฟล์: suppliers_keywords.robot
+# หน้าที่: เก็บฟังก์ชันสำหรับเทสซัพพลายเออร์
+# ใช้สำหรับ: เทสเพิ่ม/แก้ไข/ลบซัพพลายเออร์
+# ========================================
 
 *** Keywords ***
-# ===== Suppliers Management =====
+# ฟังก์ชันหลักสำหรับ Suppliers
 Login And Go To Suppliers Page
     Login With Credentials    ${VALID_USER}    ${VALID_PASSWORD}
     Navigate To Management Menu
@@ -15,19 +23,9 @@ Create Supplier Full Form
     Wait Until Element Is Visible    ${INPUT_SUPPLIER_NAME}    ${TIMEOUT}
     Clear Element Text               ${INPUT_SUPPLIER_NAME}
     Input Text                       ${INPUT_SUPPLIER_NAME}    ${name}
-
-    Wait Until Element Is Visible    ${INPUT_SUPPLIER_CONTACT}    ${TIMEOUT}
-    Clear Element Text               ${INPUT_SUPPLIER_CONTACT}
     Input Text                       ${INPUT_SUPPLIER_CONTACT}    ${contact}
-
-    Wait Until Element Is Visible    ${INPUT_SUPPLIER_PHONE}    ${TIMEOUT}
-    Clear Element Text               ${INPUT_SUPPLIER_PHONE}
     Input Text                       ${INPUT_SUPPLIER_PHONE}    ${phone}
-
-    Wait Until Element Is Visible    ${INPUT_SUPPLIER_ADDRESS}    ${TIMEOUT}
-    Clear Element Text               ${INPUT_SUPPLIER_ADDRESS}
     Input Text                       ${INPUT_SUPPLIER_ADDRESS}    ${address}
-
     Click Element                    ${BTN_SAVE_SUPPLIER}
     Click If Exists                  ${SWAL_CONFIRM}
     Wait Until Element Is Not Visible    ${INPUT_SUPPLIER_NAME}    ${TIMEOUT}
@@ -46,26 +44,20 @@ Screenshot Latest Supplier Row
     ${ROW}=    Set Variable    xpath=(//tr[.//*[self::td or self::span or self::div][contains(normalize-space(.),"${name}")]])[1]
     Wait Until Element Is Visible    ${ROW}    ${TIMEOUT}
     Scroll Element Into View         ${ROW}
-    Create Directory If Not Exists    ${SCREEN_DIR}
     Capture Element Screenshot    ${ROW}    ${SCREEN_DIR}${/}latest_supplier.png
 
 Click Edit Supplier Button
     Wait Until Page Contains Element    ${BTN_EDIT_SUPPLIER}    ${TIMEOUT}
-    Scroll Element Into View            ${BTN_EDIT_SUPPLIER}
     Click Element                       ${BTN_EDIT_SUPPLIER}
     Wait Table Idle
 
 Click Delete Supplier Button
     Wait Until Page Contains Element    ${BTN_DELETE_SUPPLIER}    ${TIMEOUT}
-    Scroll Element Into View            ${BTN_DELETE_SUPPLIER}
     Click Element                       ${BTN_DELETE_SUPPLIER}
     Wait Table Idle
 
 Confirm Delete Dialog
-    ${ok}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${SWAL_CONFIRM}    5s
-    Run Keyword If    ${ok}    Click Element    ${SWAL_CONFIRM}
-    ${ok2}=   Run Keyword And Return Status    Wait Until Page Contains Element    xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']    3s
-    Run Keyword If    ${ok2}   Click Element    xpath=//button[normalize-space()='ยืนยัน' or normalize-space()='ตกลง' or normalize-space()='OK']
+    Click If Exists    ${SWAL_CONFIRM}
     Wait Table Idle
 
 Verify Supplier Not Exists

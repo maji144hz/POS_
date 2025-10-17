@@ -1,20 +1,18 @@
 *** Variables ***
-# --- Base Configuration ---
-${BASE_URL}           http://localhost:5173
+# ========================================
+# ไฟล์: common_variables.robot
+# หน้าที่: เก็บข้อมูลพื้นฐานที่ทุกเทสต้องใช้
+# ใช้สำหรับ: URL เว็บไซต์, ข้อมูล login, เวลารอ
+# ========================================
+
+# ข้อมูลพื้นฐาน
+${BASE_URL}           https://frontend-finally-delta.vercel.app/login
 ${BROWSER}            chrome
 ${VALID_USER}         1
 ${VALID_PASSWORD}     123
 ${TIMEOUT}            15s
 ${SCREEN_DIR}         screenshots
-${SHORT_TIMEOUT}      5s
-${LONG_TIMEOUT}       30s
 
-# --- Execution Flags ---
-${HEADLESS}           false
-
-# --- Common Locators ---
+# Element พื้นฐาน
 ${SPINNERS}           css=.ant-spin,.loading,.v-overlay--active,.swal2-container
 ${SWAL_CONFIRM}       css=button.swal2-confirm
-
-# --- Common Test Data ---
-${RANDOM_BASE}        ทดสอบ
